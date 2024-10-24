@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagosofá - Página Principal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F2F2F2;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .header {
+            background-color: #003366; /* Azul oscuro */
+            color: #FFFFFF; /* Blanco */
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            margin: 0 20px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #E8E8E8; /* Gris claro */
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .search-bar button {
+            background-color: #0066CC; /* Azul */
+            color: #FFFFFF; /* Blanco */
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+
+        .search-bar button:hover {
+            background-color: #0055A4; /* Azul oscuro */
+        }
+
+        .header .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .nav-links a {
+            color: #FFFFFF; /* Blanco */
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        .header .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            color: #333333; /* Gris oscuro */
+        }
+
+        .footer {
+            background-color: #003366; /* Azul oscuro */
+            color: #FFFFFF; /* Blanco */
+            text-align: center;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Pagosofá</div>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Buscar usuarios...">
+            <button type="button" onclick="searchUsers()">Buscar</button>
+        </div>
+        <div class="nav-links">
+            <a href="#">Notificaciones</a>
+            <a href="#">Configuración</a>
+            <a href="#">Perfil</a>
+        </div>
+    </div>
+    <div class="main-content">
+        <h1>Bienvenido a Pagosofá</h1>
+        <p>Desde aquí podrás gestionar tus pagos, ver notificaciones y configurar tu perfil.</p>
+        <!-- Aquí puedes añadir contenido adicional según las necesidades -->
+    </div>
+    <div class="footer">
+        © 2024 Pagosofá. Todos los derechos reservados.
+    </div>
+
+    <script>
+        function searchUsers() {
+            const query = document.getElementById('search').value;
+            alert('Buscando usuarios para: ' + query);
+            // Aquí podrías implementar la lógica real para buscar usuarios
+        }
+    </script>
+</body>
+</html>

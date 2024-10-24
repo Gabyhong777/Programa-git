@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificaciones de Pagos - Pagosofá</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F2F2F2;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .header {
+            background-color: #003366; /* Azul oscuro */
+            color: #FFFFFF; /* Blanco */
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .header .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .nav-links a {
+            color: #FFFFFF; /* Blanco */
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        .header .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .notifications-container {
+            flex: 1;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background-color: #FFFFFF; /* Blanco */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .notifications-container h1 {
+            color: #003366; /* Azul oscuro */
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .notification-item {
+            border-bottom: 1px solid #E8E8E8; /* Gris claro */
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .notification-item:last-child {
+            border-bottom: none;
+        }
+
+        .notification-item .details {
+            flex: 1;
+        }
+
+        .notification-item .details h2 {
+            margin: 0;
+            font-size: 18px;
+            color: #333333; /* Gris oscuro */
+        }
+
+        .notification-item .details p {
+            margin: 5px 0;
+            color: #666666; /* Gris medio */
+        }
+
+        .mark-all-read {
+            background-color: #0066CC; /* Azul */
+            color: #FFFFFF; /* Blanco */
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .mark-all-read:hover {
+            background-color: #0055A4; /* Azul oscuro */
+        }
+
+        .footer {
+            background-color: #003366; /* Azul oscuro */
+            color: #FFFFFF; /* Blanco */
+            text-align: center;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Pagosofá</div>
+        <div class="nav-links">
+            <a href="#">Inicio</a>
+            <a href="#">Notificaciones</a>
+            <a href="#">Configuración</a>
+            <a href="#">Perfil</a>
+        </div>
+    </div>
+    <div class="notifications-container">
+        <h1>Notificaciones de Pagos</h1>
+        <div class="notification-item">
+            <div class="details">
+                <h2>Pago Realizado</h2>
+                <p>Fecha: 30 de julio de 2024</p>
+                <p>Descripción: Su pago de $100 para el curso de inglés ha sido recibido.</p>
+            </div>
+            <div class="status">Leído</div>
+        </div>
+        <div class="notification-item">
+            <div class="details">
+                <h2>Recordatorio de Pago</h2>
+                <p>Fecha: 28 de julio de 2024</p>
+                <p>Descripción: Su pago para el próximo mes vence en 2 días.</p>
+            </div>
+            <div class="status">No leído</div>
+        </div>
+        <!-- Agregar más notificaciones aquí -->
+        <button class="mark-all-read" onclick="markAllAsRead()">Marcar todo como leído</button>
+    </div>
+    <div class="footer">
+        © 2024 Pagosofá. Todos los derechos reservados.
+    </div>
+
+    <script>
+        function markAllAsRead() {
+            const notifications = document.querySelectorAll('.notification-item .status');
+            notifications.forEach(status => {
+                if (status.textContent === 'No leído') {
+                    status.textContent = 'Leído';
+                }
+            });
+            alert('Todas las notificaciones han sido marcadas como leídas.');
+        }
+    </script>
+</body>
+</html>

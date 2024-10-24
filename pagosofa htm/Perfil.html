@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Pagosofá</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F2F2F2;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .header {
+            background-color: #003366; /* Azul oscuro */
+            color: #FFFFFF; /* Blanco */
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .header .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .nav-links a {
+            color: #FFFFFF; /* Blanco */
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        .header .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .profile-container {
+            flex: 1;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background-color: #FFFFFF; /* Blanco */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-container h1 {
+            color: #003366; /* Azul oscuro */
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .profile-info {
+            margin-bottom: 20px;
+        }
+
+        .profile-info label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #333333; /* Gris oscuro */
+        }
+
+        .profile-info p {
+            font-size: 16px;
+            margin: 0;
+            color: #666666; /* Gris medio */
+        }
+
+        .edit-button, .update-button {
+            background-color: #0066CC; /* Azul */
+            color: #FFFFFF; /* Blanco */
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .edit-button:hover, .update-button:hover {
+            background-color: #0055A4; /* Azul oscuro */
+        }
+
+        .footer {
+            background-color: #003366; /* Azul oscuro */
+            color: #FFFFFF; /* Blanco */
+            text-align: center;
+            padding: 10px 20px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #E8E8E8; /* Gris claro */
+            border-radius: 4px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #E8E8E8; /* Gris claro */
+            border-radius: 4px;
+            font-size: 14px;
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Pagosofá</div>
+        <div class="nav-links">
+            <a href="#">Inicio</a>
+            <a href="#">Notificaciones</a>
+            <a href="#">Configuración</a>
+            <a href="#">Perfil</a>
+        </div>
+    </div>
+    <div class="profile-container">
+        <h1>Perfil del Estudiante</h1>
+        <div class="profile-info">
+            <label for="name">Nombre:</label>
+            <p id="name">Juan Pérez</p>
+
+            <label for="email">Correo Electrónico:</label>
+            <p id="email">juan.perez@example.com</p>
+
+            <label for="id-number">Número de Cédula:</label>
+            <p id="id-number">1234567890</p>
+
+            <label for="age">Edad:</label>
+            <p id="age">22</p>
+        </div>
+        <div class="profile-actions">
+            <button class="edit-button" onclick="editProfile()">Editar Perfil</button>
+            <button class="update-button" onclick="updateProfile()">Actualizar Información</button>
+        </div>
+        <div class="change-password">
+            <h2>Cambiar Contraseña</h2>
+            <form id="changePasswordForm">
+                <div class="form-group">
+                    <label for="current-password">Contraseña Actual:</label>
+                    <input type="password" id="current-password" name="current-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="new-password">Nueva Contraseña:</label>
+                    <input type="password" id="new-password" name="new-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirmar Nueva Contraseña:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <button type="submit" class="update-button">Cambiar Contraseña</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        © 2024 Pagosofá. Todos los derechos reservados.
+    </div>
+
+    <script>
+        function editProfile() {
+            // Aquí podrías implementar la lógica para permitir la edición del perfil
+            alert('Funcionalidad de edición de perfil aún no implementada');
+        }
+
+        function updateProfile() {
+            // Aquí podrías implementar la lógica para actualizar la información del perfil
+            alert('Funcionalidad de actualización de perfil aún no implementada');
+        }
+
+        document.getElementById('changePasswordForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const currentPassword = document.getElementById('current-password').value;
+            const newPassword = document.getElementById('new-password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            if (newPassword === confirmPassword) {
+                alert('Contraseña cambiada exitosamente');
+                // Aquí podrías implementar la lógica para cambiar la contraseña
+            } else {
+                alert('Las contraseñas no coinciden');
+            }
+        });
+    </script>
+</body>
+</html>
